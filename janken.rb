@@ -1,38 +1,38 @@
 def janken_game
-    puts "じゃんけん..."
-    puts "0(グー),1(チョキ),2(パー),3(戦わない)"
+  puts "じゃんけん..."
+  puts "0(グー),1(チョキ),2(パー),3(戦わない)"
       
-    my_hand = gets.to_i
-    puts "ホイ！"
+  my_hand = gets.to_i
+  puts "ホイ！"
       
-      if my_hand == 3
-        puts "ゲームを終了します"
-        exit
-      elsif my_hand > 3
-        puts "正しい数値を入力してください"
-        janken_game
-      end
+    if my_hand == 3
+      puts "ゲームを終了します"
+      exit
+    elsif my_hand > 3
+      puts "正しい数値を入力してください"
+      janken_game
+    end
       
-    com_hand = rand(3)
-    jankens = ["グー","チョキ","パー"]
+  com_hand = rand(3)
+  jankens = ["グー","チョキ","パー"]
       
-    puts "----------------"
-    puts "あなた：#{jankens[my_hand]}を出しました"
-    puts "相手：#{jankens[com_hand]}を出しました"
-    puts "----------------"
+  puts "----------------"
+  puts "あなた：#{jankens[my_hand]}を出しました"
+  puts "相手：#{jankens[com_hand]}を出しました"
+  puts "----------------"
       
-    $win = "win"
+  $win = "win"
       
-      if my_hand == com_hand
-        puts "あいこで"
-        janken_game
-      elsif  (my_hand == 0 && com_hand == 1) || (my_hand == 1 && com_hand == 2) || (my_hand == 2 && com_hand == 0)
-        $win = "win"
-        attimuite_hoi
-      elsif  (my_hand == 0 && com_hand == 2) || (my_hand == 1 && com_hand == 0) || (my_hand == 2 && com_hand == 1)
-        $win = "lose"
-        attimuite_hoi
-      end
+    if my_hand == com_hand
+      puts "あいこで"
+      janken_game
+    elsif  (my_hand == 0 && com_hand == 1) || (my_hand == 1 && com_hand == 2) || (my_hand == 2 && com_hand == 0)
+      $win = "win"
+      attimuite_hoi
+    elsif  (my_hand == 0 && com_hand == 2) || (my_hand == 1 && com_hand == 0) || (my_hand == 2 && com_hand == 1)
+      $win = "lose"
+      attimuite_hoi
+    end
 end  
   
 def attimuite_hoi 
